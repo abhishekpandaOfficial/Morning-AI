@@ -20,9 +20,7 @@ isModalOpen(id: string) : boolean{
   // !! Operator will convert something to Boolen 
  //Boolean(this.modals.find(element =>element.id === id)?.visible)
 
-  return !!this.modals.find(element =>{
-    element.id === id
-  })?.visible
+  return !!this.modals.find(element =>element.id === id)?.visible
 }
 
 toggleModal(id: string) {
@@ -41,8 +39,16 @@ register(id: string)
 this.modals.push({
   id, visible:false
 })
-
 // console.log(this.modals)
 }
+
+unregister(id: string)
+{
+  this.modals = this.modals.filter(
+    element => element.id !==id
+  )
+}
+
+
 
 }
